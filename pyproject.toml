@@ -1,0 +1,29 @@
+[project]
+name = "alert-ai"
+version = "0.1.0"
+description = "Slack alert interceptor that analyzes GCP logs with AI to provide triage guidance"
+requires-python = ">=3.11"
+dependencies = [
+    "slack-bolt>=1.18,<2",
+    "google-cloud-logging>=3.10,<4",
+    "anthropic>=0.39,<1",
+    "pydantic>=2.0,<3",
+    "pydantic-settings>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
